@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://7s7kkwyla7ib"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_xsj6r"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_xsj6r")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.789292, -0.121398, 0.601898, -0.072194, 0.955113, 0.28731, -0.60976, -0.270225, 0.745098, 47.1886, 19.1205, 40.8856)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://di5act7qpvk2b"]
+
+[ext_resource type="Script" path="res://spring.gd" id="1_xsg1u"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t86kq"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
+
+[node name="Spring" type="Node3D"]
+script = ExtResource("1_xsg1u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_t86kq")
