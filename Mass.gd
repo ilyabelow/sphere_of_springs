@@ -3,7 +3,7 @@ class_name Mass
 extends Node3D
 
 
-var mass: float = 0.1
+var mass: float = 0.2
 var friction_coef: float = 0.01
 var inf_mass: bool = false
 

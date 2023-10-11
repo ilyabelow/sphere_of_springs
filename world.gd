@@ -6,7 +6,6 @@ extends Node3D
 
 var masses: Array[Mass]
 var springs: Array[Spring]
-var pivot: Mass
 
 const gravity := Vector3(0, -9.8, 0)
 
@@ -23,12 +22,9 @@ func _ready():
 				if x*x + y*y + z*z > sides*sides*.25:
 					continue
 				var mass := mass_scene.instantiate() as Mass
-				if j == sides -1 and i == sides/2 and k == sides/2:
+				if j == sides - 1:
 					mass.inf_mass = true
-				if j == sides/2 and i == sides-1 and k == sides/2:
-					pivot = mass
-					mass.inf_mass = true
-				mass.position = Vector3(x, y, z) * step# + Vector3(0, sides * step, 0)
+				mass.position = Vector3(x, y, z).rotated(Vector3.FORWARD, PI/8) * step
 				masses.append(mass)
 				add_child(mass)
 
@@ -54,6 +50,3 @@ func _physics_process(delta: float) -> void:
 		mass.apply_gravity(gravity)
 		mass.apply_friction()
 		mass.apply_forces(delta)
-	
-	var time := Time.get_ticks_msec()/100.
-	pivot.position.x = 10*sin(time)+20*sin(time/5)+20

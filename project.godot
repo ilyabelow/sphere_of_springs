@@ -14,3 +14,7 @@ config/name="sphereOfSprings"
 run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[editor]
+
+movie_writer/movie_file="/home/ilyabelow/Code/sphere_of_springs/t.avi"

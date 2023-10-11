@@ -4,7 +4,7 @@ extends Node3D
 
 var l0: float
 var l: float
-var k: float = 15.0
+var k: float = 5.0
 
 var m1: Mass
 var m2: Mass
