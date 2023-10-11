@@ -4,7 +4,7 @@ extends Node3D
 
 
 var mass: float = 0.2
-var friction_coef: float = 0.01
+var friction_coef: float = 0.05
 var inf_mass: bool = false
 
 var velocity: Vector3
@@ -23,7 +23,7 @@ func apply_forces(delta: float) -> void:
 	position += velocity * delta
 
 func apply_friction() -> void:
-	var friction := -friction_coef*velocity*velocity.length()
+	var friction := -friction_coef*velocity
 	force += friction
 
 func apply_gravity(gravity: Vector3) -> void:
